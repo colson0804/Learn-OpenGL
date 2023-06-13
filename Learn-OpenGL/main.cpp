@@ -55,8 +55,8 @@ int main(int argc, const char * argv[]) {
     if(currentDirectory != nullptr)
     {
         std::string directory(currentDirectory);
-        std::string vShaderPath = directory + "3.3.shader.vs";
-        std::string fShaderPath = directory + "3.3.shader.fs";
+        std::string vShaderPath = directory + "shaders/3.3.shader.vs";
+        std::string fShaderPath = directory + "shaders/3.3.shader.fs";
         ourShader = Shader(vShaderPath.c_str(), fShaderPath.c_str());
     }
         
