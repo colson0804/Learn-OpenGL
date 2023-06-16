@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A51972AF2A3D17AF00EFAE08 /* awesomeface.png in Resources */ = {isa = PBXBuildFile; fileRef = A51972AE2A3D17AF00EFAE08 /* awesomeface.png */; };
 		A5E0E3492A300CCA000FD099 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5E0E3482A300CCA000FD099 /* main.cpp */; };
 		A5E0E6DF2A3249FE000FD099 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E0E6DE2A3249FE000FD099 /* OpenGL.framework */; };
 		A5E0E6E12A324BF0000FD099 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E0E6E02A324BF0000FD099 /* libglfw.3.3.dylib */; };
@@ -31,6 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A51972AE2A3D17AF00EFAE08 /* awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awesomeface.png; sourceTree = "<group>"; };
 		A5E0E3452A300CCA000FD099 /* Learn-OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Learn-OpenGL"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E0E3482A300CCA000FD099 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		A5E0E6DE2A3249FE000FD099 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -107,6 +109,7 @@
 		A5E0E7722A38E87E000FD099 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				A51972AE2A3D17AF00EFAE08 /* awesomeface.png */,
 				A5E0E7732A38E89F000FD099 /* container.jpeg */,
 			);
 			path = resources;
@@ -172,6 +175,7 @@
 			files = (
 				A5E0E76C2A37C7BF000FD099 /* 3.3.shader.vs in Resources */,
 				A5E0E7742A38E89F000FD099 /* container.jpeg in Resources */,
+				A51972AF2A3D17AF00EFAE08 /* awesomeface.png in Resources */,
 				A5E0E76D2A37C7C2000FD099 /* 3.3.shader.fs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
