@@ -14,6 +14,8 @@
 		A5E0E7672A37C48A000FD099 /* shader.h in Sources */ = {isa = PBXBuildFile; fileRef = A5E0E7602A37A8AB000FD099 /* shader.h */; };
 		A5E0E76C2A37C7BF000FD099 /* 3.3.shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = A5E0E7622A37AD4E000FD099 /* 3.3.shader.vs */; };
 		A5E0E76D2A37C7C2000FD099 /* 3.3.shader.fs in Resources */ = {isa = PBXBuildFile; fileRef = A5E0E7632A37ADB2000FD099 /* 3.3.shader.fs */; };
+		A5E0E76F2A38E7DF000FD099 /* stb_image.h in Sources */ = {isa = PBXBuildFile; fileRef = A5E0E76E2A38E7BF000FD099 /* stb_image.h */; };
+		A5E0E7742A38E89F000FD099 /* container.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5E0E7732A38E89F000FD099 /* container.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +39,8 @@
 		A5E0E7602A37A8AB000FD099 /* shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shader.h; sourceTree = "<group>"; };
 		A5E0E7622A37AD4E000FD099 /* 3.3.shader.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 3.3.shader.vs; sourceTree = "<group>"; };
 		A5E0E7632A37ADB2000FD099 /* 3.3.shader.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = 3.3.shader.fs; sourceTree = "<group>"; };
+		A5E0E76E2A38E7BF000FD099 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		A5E0E7732A38E89F000FD099 /* container.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +76,12 @@
 		A5E0E3472A300CCA000FD099 /* Learn-OpenGL */ = {
 			isa = PBXGroup;
 			children = (
+				A5E0E7722A38E87E000FD099 /* resources */,
 				A5E0E7612A37AD2F000FD099 /* shaders */,
 				A5E0E6E22A325109000FD099 /* glad.c */,
 				A5E0E3482A300CCA000FD099 /* main.cpp */,
 				A5E0E7602A37A8AB000FD099 /* shader.h */,
+				A5E0E76E2A38E7BF000FD099 /* stb_image.h */,
 			);
 			path = "Learn-OpenGL";
 			sourceTree = "<group>";
@@ -96,6 +102,14 @@
 				A5E0E7632A37ADB2000FD099 /* 3.3.shader.fs */,
 			);
 			path = shaders;
+			sourceTree = "<group>";
+		};
+		A5E0E7722A38E87E000FD099 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5E0E7732A38E89F000FD099 /* container.jpeg */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5E0E76C2A37C7BF000FD099 /* 3.3.shader.vs in Resources */,
+				A5E0E7742A38E89F000FD099 /* container.jpeg in Resources */,
 				A5E0E76D2A37C7C2000FD099 /* 3.3.shader.fs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E0E76F2A38E7DF000FD099 /* stb_image.h in Sources */,
 				A5E0E3492A300CCA000FD099 /* main.cpp in Sources */,
 				A5E0E6E32A325109000FD099 /* glad.c in Sources */,
 				A5E0E7672A37C48A000FD099 /* shader.h in Sources */,
@@ -227,6 +243,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Users/craigolson/Document/Development/Learn-OpenGL/Learn-OpenGL";
 				MACOSX_DEPLOYMENT_TARGET = 12.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -279,6 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Users/craigolson/Document/Development/Learn-OpenGL/Learn-OpenGL";
 				MACOSX_DEPLOYMENT_TARGET = 12.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -293,11 +311,13 @@
 				HEADER_SEARCH_PATHS = (
 					/usr/local/include,
 					/Users/craigolson/dev/native_dependencies/glad/include,
+					"/Users/craigolson/Documents/Development/Learn-OpenGL/Learn-OpenGL",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glfw/3.3.8/lib,
 				);
+				OTHER_CFLAGS = "-I/Users/craigolson/Documents/Development/Learn-OpenGL/Learn-OpenGL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -309,11 +329,13 @@
 				HEADER_SEARCH_PATHS = (
 					/usr/local/include,
 					/Users/craigolson/dev/native_dependencies/glad/include,
+					"/Users/craigolson/Documents/Development/Learn-OpenGL/Learn-OpenGL",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glfw/3.3.8/lib,
 				);
+				OTHER_CFLAGS = "-I/Users/craigolson/Documents/Development/Learn-OpenGL/Learn-OpenGL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
