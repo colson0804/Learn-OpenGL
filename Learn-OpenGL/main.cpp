@@ -20,6 +20,8 @@
 #include <stb_image.h>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow *window);
 
 // global constants
@@ -34,6 +36,10 @@ glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 // delta time
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
+
+float lastX = 400, lastY = 300;
+float yaw = -90.0, pitch = 0.0;
+bool firstMouse = true;
 
 int main(int argc, const char * argv[]) {
     // Initialize window and set it to current context
@@ -64,7 +70,10 @@ int main(int argc, const char * argv[]) {
     // Set viewport size to the size of the window
     glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);\
+    
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    glfwSetCursorPosCallback(window, mouse_callback);
     
     // Initialize shader
     const char* currentDirectory = std::getenv("LEARN_OPENGL_PATH");
@@ -281,6 +290,48 @@ int main(int argc, const char * argv[]) {
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
+}
+
+// callback function for mouse input
+// ---------------------------------------------------------------------------------------------------------
+void mouse_callback(GLFWwindow* window, double xpos, double ypos)
+{
+    if (firstMouse)
+    {
+        lastX = xpos;
+        lastY = ypos;
+        firstMouse = false;
+    }
+    
+    float xoffset = xpos - lastX;
+    float yoffset = lastY - ypos;
+    lastX = xpos;
+    lastY = ypos;
+    
+    const float sensitivity = 0.1f;
+    xoffset *= sensitivity;
+    yoffset *= sensitivity;
+    
+    yaw += xoffset;
+    pitch += yoffset;
+    
+    if(pitch > 89.0f)
+        pitch = 89.0f;
+    if(pitch < -89.9f)
+        pitch = -89.0f;
+    
+    glm::vec3 direction;
+    direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+    direction.y = sin(glm::radians(pitch));
+    direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+    cameraFront = glm::normalize(direction);
+}
+
+// callback function for scroll input
+// ---------------------------------------------------------------------------------------------------------
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+    
 }
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
